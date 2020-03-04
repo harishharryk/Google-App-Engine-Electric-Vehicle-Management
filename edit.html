@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Update User information</title>
+</head>
+<body>
+    <h3>Edit your information below</h3><br/>
+    <form method="post" action="/edit">
+    Name:<input type="text" name="users_name" value="{{ myuser.name }}"/>
+    <br/>
+    Age:<input type="number" name="users_age" value="{{ myuser.age }}"/>
+    <br/>
+    <input type="submit" value="Update" name="button"/>
+    </form>
+      <form method="post" action="/edit">
+      <input type="submit" value="Cancel" name="button"/>
+    </form>
+</body>
+</html>

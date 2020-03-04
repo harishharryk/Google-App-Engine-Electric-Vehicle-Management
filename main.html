@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>User login/logout</title>
+</head>
+<body>
+  <h2 align=center><u>{{message}}</u></h2>
+
+  {% if user %}
+<p>Hello {{ user.email() }} welcome to the application</p>
+<h3 align=center><u>{{message}}</u></h3>
+<form  action="/" method="post" >
+
+      Name: <input type="text" name="evName" required>
+      <br/>
+      Manufacturer:<input type="text" name="evManufacturer" required>
+      <br/>
+      DateIssued:<input type="date" name="evDateIssued" required>
+      <br/>
+      <!--Battery Size:<input type="number" name="evBatterysize" required>-->
+      Battery Size:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize" required>
+      <br/>
+      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrangemin" required>-<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrangemax" required>
+      <br/>
+      Cost:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evCost" required>
+      <br/>
+      Power:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evPower" required>
+      <br/>
+      <input type="submit" name="button" value="Add EV">
+    </form>
+  {% else %}
+<p>Hello guest welcome to the application</p>
+{% endif %}
+<p>you can {{ url_string }} <a href='{{ url }}'>here</a></p>
+<!--<p align=center style="font-size:20px;">To compare GPUs please <a href="/compare" >click here</a><br/></p>-->
+<p align=center style="font-size:20px;">To search the list of EVs based on specific feature please <a href="/refinedSearch">click here</a><br/></p>
+</body>
+</html>

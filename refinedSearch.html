@@ -1,0 +1,78 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Find a Perfect car for You!!!!</title>
+    <style>
+  form{
+    /* width:500px; */
+
+    font-size: 20px;
+  }
+  h2{
+    display: none;
+  }
+  </style>
+  </head>
+  <body bgcolor="pink">
+    <h2>{{message}}</h2>
+    <h1 align=center><u>ENTER THE CAR FEATURE BELOW FOR SEARCH</u></h1>
+
+    <form action="/refinedSearch"  method="post">
+      Name:<input type="text" name="name_search" >
+      <br/>
+      Manufacturer:<input type="text" name="man_search">
+      <br/>
+      Battery Size:<input type="text" name="Bat_search">
+      <br>
+      WLTP range Min:<input type="text" name="Wltp_min_search">&nbsp;Max:<input type="text" name="Wltp_max_search">
+      <br>
+      Max Cost:<input type="text" name="Cost_search"> <!--Max (so less than vlaue of text box)-->
+      <br>
+      Max Power:<input type="text" name="Power_search"><!--Max (so less than vlaue of text box)-->
+      <br>
+      <!--Name:<input type="text" name="search">-->
+
+        <input type="submit" name="button" value="Search">
+        <!-- <input type="submit" name="button" value="COMPARE"> -->
+        <input type="submit" name="button" value="CANCEL">
+
+        <!--   <table border= 1px solid #ddd align=center>
+          <th>LIST OF EVs</th>
+            {% for ev in all_keys %}
+            <tr>
+            <td align=center><b>{{ev.evName}}</b></td>
+            </td>
+            </tr>
+    	      {% endfor %}
+      </table>-->
+
+     {% if message == "success" %}
+          <h1>Car Found</h1>
+
+        <table border= 1px solid align=center>
+      <th>LIST OF EVs</th>
+        {% for ev in all_keys %}
+        <tr>
+        <td align=center><b>{{EV.evName}}</b></td>
+        </td>
+        </tr>
+	      {% endfor %}
+      </table>
+
+
+        <div id="search">
+          <!--<h1><a href="/Display">{{EV.evName}}</a></h1>
+        <h1><a href="/Display?name={{EV.evName}}">{{EV.evName}}</a></h1>-->
+        <h1><a href="/Display.html={{EV.evName}}">{{EV.evName}}</a></h1>
+        </div>
+
+        {% elif message == "fail" %}
+        <h1>Cars NOT FOUND!!</h1>
+        {% endif %}
+    </form>
+    <br/>
+
+
+  </body>
+</html>
