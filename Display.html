@@ -1,27 +1,22 @@
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
     <title>cars DISPLAY</title>
-    <style>
-    div#search {
-      padding: 5px;
-      border: 1px solid blue;
-      border-radius: 8px;
-      background-color: #42E8F4;
-      width: 500px;
-      text-align: center;
-      resize: both;
-      margin: auto;
-    }
-  </style>
+
   </head>
-  <body>
-    {{query_id}}
+  <body align=center>
     <a href="/">HOME</a>
-    <h1 align=center>WELCOME TO EV cars PROFILE</h1>
-    <div id="search">
-            <u>Car_Name:</u> <b>{{ev.evName}}</b><br/>
+    <h1 align=center>WELCOME TO EV PROFILE</h1>
+    <h2><u>Details of <i>{{ev.evName}}</i></u></h2>
+    EV_Name:<b>{{ev.evName}}</b>
+    EV_Manufacturer:<b>{{ev.evManufacturer}}</b>
+    EV_Manufactured_Year:<b>{{ev.evDateIssued}}</b>
+    EV_Battery_Size:<b>{{ev.evBatterysize}}</b>
+    EV_WLTPrange:<b>{{ev.evWLTPrange}}</b>
+    EV_Cost:<b>{{ev.evCost}}</b>
+    EV_Power:<b>{{ev.evPower}}</b>
 
     </div>
 
     </body>
+    </html>

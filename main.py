@@ -49,10 +49,11 @@ class MainPage(webapp2.RequestHandler):
             if action == 'Add EV':
                 evName = self.request.get('evName')
                 evManufacturer = self.request.get('evManufacturer')
-                evDateIssued = datetime.strptime(self.request.get('evDateIssued'),'%Y-%m-%d')
+                #evDateIssued = datetime.strptime(self.request.get('evDateIssued'),'%Y')
+                evDateIssued = self.request.get('evDateIssued')
                 evBatterysize = self.request.get('evBatterysize')
-                evWLTPrangemin = self.request.get('evWLTPrangemin')
-                evWLTPrangemax = self.request.get('evWLTPrangemax')
+                evWLTPrange = self.request.get('evWLTPrange')
+                #evWLTPrangemax = self.request.get('evWLTPrangemax')
                 evCost = self.request.get('evCost')
                 evPower = self.request.get('evPower')
 
@@ -61,7 +62,7 @@ class MainPage(webapp2.RequestHandler):
                 myev = myev_key.get()
                 if myev == None:
                     #,id=evName
-                    new_ev = EV(evName=evName,id=evName,evManufacturer=evManufacturer,evDateIssued=evDateIssued,evBatterysize=evBatterysize,evWLTPrangemin=evWLTPrangemin,evWLTPrangemax=evWLTPrangemax,evCost=evCost,evPower=evPower)
+                    new_ev = EV(evName=evName,id=evName,evManufacturer=evManufacturer,evDateIssued=evDateIssued,evBatterysize=evBatterysize,evWLTPrange=evWLTPrange,evCost=evCost,evPower=evPower)
                     new_ev.put()
                     message = "EV Added!!"
                 else:

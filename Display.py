@@ -13,12 +13,15 @@ autoescape = True
 )
 
 class DisplayCars(webapp2.RequestHandler):
-        def post(self):
+        def get(self):
         # self.response.write("Hello, webapp2!")
             self.response.headers['Content-Type'] = 'text/html'
+            ev_key=ndb.Key('EV',str(self.request.GET.items()[0][1]))
+            ev=ev_key.get()
             Message = "Welcome page"
             template_values = {
-            'message' : Message
+            'message' : Message,
+            'ev':ev
             }
 
             template = JINJA_ENVIRONMENT.get_template('Display.html')

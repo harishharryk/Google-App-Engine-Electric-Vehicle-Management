@@ -15,12 +15,12 @@
       <br/>
       Manufacturer:<input type="text" name="evManufacturer" required>
       <br/>
-      DateIssued:<input type="date" name="evDateIssued" required>
+      DateIssued:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evDateIssued" required>
       <br/>
       <!--Battery Size:<input type="number" name="evBatterysize" required>-->
       Battery Size:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize" required>
       <br/>
-      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrangemin" required>-<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrangemax" required>
+      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrange" required>
       <br/>
       Cost:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evCost" required>
       <br/>
