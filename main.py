@@ -7,6 +7,9 @@ from Display import DisplayCars
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from ev import EV
+from edit import Edit_Cars
+from compare import Compare
+from comparecars import CompareCars
 import os
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -85,4 +88,4 @@ class MainPage(webapp2.RequestHandler):
 #                ('/refinedSearch',RefinedSearch)
 #                ], debug=True)
 
-app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars)],debug = True)
+app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars),('/edit',Edit_Cars),('/compare',Compare),('/compareCars',CompareCars)],debug = True)

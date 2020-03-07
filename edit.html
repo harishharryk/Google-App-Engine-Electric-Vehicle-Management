@@ -1,19 +1,33 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Update User information</title>
+<title>Update {{ev.evName}} information</title>
 </head>
 <body>
+  <p>you can {{ url_string }} <a href='{{ url }}'>here</a></p>
+  {% if user %}
+<p>Hello {{ user.email() }}</p>
+<h3 align=center><u>{{message}}</u></h3>
+<form method="post" action="/edit">
+  <input type='hidden' name='evName' value='{{ev.evName}}'>
     <h3>Edit your information below</h3><br/>
-    <form method="post" action="/edit">
-    Name:<input type="text" name="users_name" value="{{ myuser.name }}"/>
-    <br/>
-    Age:<input type="number" name="users_age" value="{{ myuser.age }}"/>
-    <br/>
-    <input type="submit" value="Update" name="button"/>
+      EV_Name:<b>{{ev.evName}}</b><br>
+      EV_Manufacturer:<b>{{ev.evManufacturer}}</b><br>
+      EV_Manufactured_Year:<b>{{ev.evDateIssued}}</b><br>
+      Battery Size:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize1" >
+      <br/>
+      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrange1" >
+      <br/>
+      Cost:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evCost1" >
+      <br/>
+      Power:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evPower1" >
+      <br/>
+    <input type="submit" value="Update" name="button">
+    <input type="submit" value="Delete" name="button">
+    <input type="submit" name="button" value="CANCEL">
     </form>
-      <form method="post" action="/edit">
-      <input type="submit" value="Cancel" name="button"/>
-    </form>
+    {% else %}
+  <p>Hello guest welcome to Your Edit Page</p>
+  {% endif %}
 </body>
 </html>

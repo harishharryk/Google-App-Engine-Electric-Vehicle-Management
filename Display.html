@@ -2,21 +2,28 @@
   <head>
     <meta charset="utf-8">
     <title>cars DISPLAY</title>
+<style>
+form{
+  /* width:500px; */
 
+  font-size: 20px;
+}
+</style>
   </head>
-  <body align=center>
+  <body align=center bgcolor="pink">
+    <form method="post">
     <a href="/">HOME</a>
     <h1 align=center>WELCOME TO EV PROFILE</h1>
-    <h2><u>Details of <i>{{ev.evName}}</i></u></h2>
-    EV_Name:<b>{{ev.evName}}</b>
-    EV_Manufacturer:<b>{{ev.evManufacturer}}</b>
-    EV_Manufactured_Year:<b>{{ev.evDateIssued}}</b>
-    EV_Battery_Size:<b>{{ev.evBatterysize}}</b>
-    EV_WLTPrange:<b>{{ev.evWLTPrange}}</b>
-    EV_Cost:<b>{{ev.evCost}}</b>
-    EV_Power:<b>{{ev.evPower}}</b>
-
-    </div>
+    <h2><u>Details of <i>{{ev.evName}}</i></u></h2><br>
+    EV_Name:<b>{{ev.evName}}</b><br>
+    EV_Manufacturer:<b>{{ev.evManufacturer}}</b><br>
+    EV_Manufactured_Year:<b>{{ev.evDateIssued}}</b><br>
+    EV_Battery_Size:<b>{{ev.evBatterysize}}</b><br>
+    EV_WLTPrange:<b>{{ev.evWLTPrange}}</b><br>
+    EV_Cost:<b>{{ev.evCost}}</b><br>
+    EV_Power:<b>{{ev.evPower}}</b><br>
+    <a href="\edit?evName={{ev.evName}}">EDIT</a>
+  </form>
 
     </body>
     </html>

@@ -1,0 +1,53 @@
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body bgcolor="#ADD8E6">
+     <a href="/">HOME</a>
+     <h2 align=center><u>CARs COMPARISON BETWEEN <b>{{ev2.key.id()}} vs {{ev1.key.id()}}</u> </h2><br/>
+
+     <form>
+      <table align =center>
+         <tr>
+            <th style="width:50%">EVs FEATURES</th>
+            <th><a href="/Display?name={{ev2.evName}}"><b>{{ev2.evName}}</b></td></th>
+            <th><a href="/Display?name={{ev1.evName}}"><b>{{ev1.evName}}</b></td></th>
+            <!--<th>{{ev2.key.id()}}</th>
+            <th>{{ev1.key.id()}}</th>-->
+         </tr>
+         <tr>
+            <td>Manufacturer</td>
+            <td>{{ev2.evManufacturer}}</td>
+            <td>{{ev1.evManufacturer}}</td>
+         </tr>
+         <tr>
+            <td>Year</td>
+            <td><i>{{ev2.evDateIssued}}</i></td>
+            <td><i>{{ev1.evDateIssued}}</i></td>
+         </tr>
+         <tr>
+            <td>Battery_size</td>
+            <td><i><font color={{ev2_Batterysize_color}}>{{ev2.evBatterysize}}</font></i></td>
+            <td><i><font color={{ev1_Batterysize_color}}>{{ev1.evBatterysize}}</font></i></td>
+         </tr>
+         <tr>
+            <td>WLTP_range</td>
+            <td><i><font color={{ev2_evWLTPrange_color}}>{{ev2.evWLTPrange}}</font></i></td>
+            <td><i><font color={{ev1_evWLTPrange_color}}>{{ev1.evWLTPrange}}</font></i></td>
+         </tr>
+         <tr>
+            <td>Cost</td>
+            <td><i><font color={{ev2_evCost_color}}>{{ev2.evCost}}</i></td></font>
+            <td><i><font color={{ev1_evCost_color}}>{{ev1.evCost}}</i></td></font>
+         </tr>
+         <tr>
+            <td>Power</td>
+            <td><i><font color={{ev2_evPower_color}}>{{ev2.evPower}}</font></i></td>
+            <td><i><font color={{ev1_evPower_color}}>{{ev1.evPower}}</font></i></td>
+         </tr>
+      </table>
+    </form>
+   </body>
+</html>

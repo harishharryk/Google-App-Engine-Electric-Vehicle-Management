@@ -26,3 +26,5 @@ class DisplayCars(webapp2.RequestHandler):
 
             template = JINJA_ENVIRONMENT.get_template('Display.html')
             self.response.write(template.render(template_values))
+
+        

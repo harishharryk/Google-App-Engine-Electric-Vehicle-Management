@@ -1,0 +1,25 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body bgcolor="pink">
+    <h3 align=center><u>SELECT EV's FOR COMPARISON</u></h3>
+
+    <form action ="/compareCars"  align=center>
+      <select name = "car1">
+        {% for ev in all_keys%}
+        <option value="{{ev.id()}}"> {{ev.id()}} </option>
+        {% endfor%}
+        <option>
+      </select>
+      <select name = "car2">
+        {% for ev in all_keys%}
+        <option value="{{ev.id()}}"> {{ev.id()}} </option>
+        {% endfor%}
+      </select>
+      <input type="submit"  value="compare">
+    </form>
+  </body>
+</html>
