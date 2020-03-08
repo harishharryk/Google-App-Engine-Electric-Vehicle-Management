@@ -9,5 +9,7 @@ class EV(ndb.Model):
     #evWLTPrangemax = ndb.StringProperty()
     evCost = ndb.StringProperty()
     evPower = ndb.StringProperty()
+    evRating = ndb.StringProperty()
+    evuser_review = ndb.StringProperty()
     # evID = ndb.StringProperty()
     #evFeature = ndb.StructuredProperty(GPUFeatures)

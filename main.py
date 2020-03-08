@@ -6,10 +6,13 @@ from refinedsearch import RefinedSearch
 from Display import DisplayCars
 from google.appengine.ext import ndb
 from google.appengine.api import users
+from myuser import MyUser
 from ev import EV
+from rv import RV
 from edit import Edit_Cars
 from compare import Compare
 from comparecars import CompareCars
+from review import Review
 import os
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -21,25 +24,46 @@ autoescape=True
 class MainPage(webapp2.RequestHandler):
         def get(self):
             self.response.headers['Content-Type'] = 'text/html'
+            user = users.get_current_user()
+            if user == None:
+                template_values = {
+                'login_url' : users.create_login_url(self.request.uri)
+                }
+                template = JINJA_ENVIRONMENT.get_template('first_mainpage.html')
+                self.response.write(template.render(template_values))
+                return
+            myuser_key = ndb.Key('MyUser', user.user_id())
+            myuser = myuser_key.get()
+            if myuser == None:
+                myuser = MyUser(id=user.user_id(),username=user.email(),email_address=user.email())
+                myuser.put()
+            #all_keys = EV.query().fetch(keys_only = True)
+            template_values = {
+                'logout_url' : users.create_logout_url(self.request.uri),
+                'username':user,
+                #'all_keys' : all_keys,
+                'message':"Add EVs"
+                }
+            #self.response.headers['Content-Type'] = 'text/html'
             # URL that will contain a login or logout link
             # and also a string to represent this
-            url = ''
-            url_string = ''
+            #url = ''
+            #url_string = ''
             # pull the current user from the request
-            user = users.get_current_user()
+            #user = users.get_current_user()
 
-            if user:
-                url = users.create_logout_url(self.request.uri)
-                url_string = 'logout'
-            else:
-                url = users.create_login_url(self.request.uri)
-                url_string = 'login'
+            #if user:
+                #url = users.create_logout_url(self.request.uri)
+                #url_string = 'logout'
+            #else:
+                #url = users.create_login_url(self.request.uri)
+                #url_string = 'login'
     # generate a map that contains everything that we need to pass to the template
-            template_values = {
-            'url' : url,
-            'url_string' : url_string,
-            'user' : user
-            }
+            #template_values = {
+            #'url' : url,
+            #'url_string' : url_string,
+            #'user' : user
+            #}
             # pull the template file and ask jinja to render
     # it with the given template values
             template = JINJA_ENVIRONMENT.get_template('main.html')
@@ -88,4 +112,4 @@ class MainPage(webapp2.RequestHandler):
 #                ('/refinedSearch',RefinedSearch)
 #                ], debug=True)
 
-app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars),('/edit',Edit_Cars),('/compare',Compare),('/compareCars',CompareCars)],debug = True)
+app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars),('/edit',Edit_Cars),('/compare',Compare),('/compareCars',CompareCars),('/review',Review)],debug = True)
