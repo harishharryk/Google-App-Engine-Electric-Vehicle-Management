@@ -14,9 +14,9 @@ form{
     <form method="post" action="/review">
     <a href="/"align=center>HOME</a>
     <h1>{{message}}</h1>
-    <!--<h1 align=center>{{Current_user}}</h1>
-    <h2><u>Review of <i></i></u></h2><br>-->
-    Select EV:<select name = "rvName">
+    <!--<h1 align=center>{{Current_user}}</h1>-->
+    <h2 align="center"><u>Review<i></i></u></h2><br>
+    Select EV:<select name = "evName1">
       {% for ev in all_keys%}
       <option value="{{ev.id()}}"> {{ev.id()}} </option>
       {% endfor%}
@@ -35,16 +35,19 @@ form{
 
     </select>
     <input type="submit" name="button" value="Add Reviews">
-    
+
 
     <table border= 1px solid #ddd align=center>
       <th>LIST OF EVs</th>
       <th>Reviews</th>
-        {% for rv in all_rv_keys %}
+      <th>Ratings</th>
+        {% for ev in all_rv_keys %}
+
         <tr>
-        <td align="center"><b>{{rv.rvName}}</td><td align="center"> {{rv.rvUserreview}}</b></td>
+        <td align="center"><b>{{ev.rvName}}</b></td><td align="center"> {{ev.rvUserreview}}</td><td align="center"> {{ev.rvRating}}</td>
         </tr>
         {% endfor %}
+
       </table>
   </form>
 

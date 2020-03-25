@@ -8,11 +8,12 @@ from google.appengine.ext import ndb
 from google.appengine.api import users
 from myuser import MyUser
 from ev import EV
-from rv import RV
+from ev import RV
 from edit import Edit_Cars
 from compare import Compare
 from comparecars import CompareCars
 from review import Review
+from info import Info
 import os
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -112,4 +113,4 @@ class MainPage(webapp2.RequestHandler):
 #                ('/refinedSearch',RefinedSearch)
 #                ], debug=True)
 
-app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars),('/edit',Edit_Cars),('/compare',Compare),('/compareCars',CompareCars),('/review',Review)],debug = True)
+app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars),('/edit',Edit_Cars),('/compare',Compare),('/compareCars',CompareCars),('/review',Review),('/info',Info)],debug = True)

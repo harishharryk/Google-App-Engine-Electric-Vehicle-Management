@@ -1,4 +1,13 @@
 from google.appengine.ext import ndb
+class RV(ndb.Model):
+    rvUserreview= ndb.StringProperty()
+    #rvRating = ndb.StringProperty()
+    rvRating = ndb.IntegerProperty()
+    rvName = ndb.StringProperty()
+    rvAvg=ndb.StringProperty()
+    #rvSum=ndb.FloatProperty()
+    #rvLen=ndb.FloatProperty()
+
 class EV(ndb.Model):
     evName = ndb.StringProperty()
     evManufacturer = ndb.StringProperty()
@@ -9,7 +18,7 @@ class EV(ndb.Model):
     #evWLTPrangemax = ndb.StringProperty()
     evCost = ndb.StringProperty()
     evPower = ndb.StringProperty()
-    evRating = ndb.StringProperty()
-    evuser_review = ndb.StringProperty()
-    # evID = ndb.StringProperty()
-    #evFeature = ndb.StructuredProperty(GPUFeatures)
+    evReview=ndb.StructuredProperty(RV,repeated = True)
+
+    #evRating = ndb.StringProperty()
+    #evuser_review = ndb.StringProperty()
