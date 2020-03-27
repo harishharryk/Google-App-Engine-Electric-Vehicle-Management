@@ -30,7 +30,7 @@ class Info(webapp2.RequestHandler):
         action=self.request.get('button')
         query_list = EV.query(EV.evReview.rvRating>1).fetch()
         if action=='Retrive':
-            query_list = EV.query(EV.evReview.rvRating>1).fetch()
+            query_list = EV.query().fetch()
             #max_review = max(EV.evReview.rvRating)
             #rv_Avg=Sum(query_list)/len(query_list)
 
