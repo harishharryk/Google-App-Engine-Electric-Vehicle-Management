@@ -95,6 +95,7 @@ class MainPage(webapp2.RequestHandler):
                     message = "EV Added!!"
                 else:
                     message = "EV already exists!!"
+                    
 
             template_values = {
                 'message': message,

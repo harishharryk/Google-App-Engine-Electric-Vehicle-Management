@@ -2,28 +2,37 @@
 <head>
 <meta charset="utf-8"/>
 <title>User login/logout</title>
+<style>
+ form{
+   width:500px;
+   padding: 20px;
+   margin: auto;
+   font-size: 20px;
+ }
+ </style>
 </head>
-<body>
+<body bgcolor="pink">
   <p>Welome {{username}} to the application, you can logout <a href="{{logout_url}}"> here</a></p>
   <h2 align=center><u>{{message}}</u></h2>
 <form  action="/" method="post" >
 
-      Name: <input type="text" name="evName" required>
+      Name: <input type="text" name="evName" align="center" required>
       <br/>
-      Manufacturer:<input type="text" name="evManufacturer" required>
+      Manufacturer: <input type="text" name="evManufacturer" align="center" required>
       <br/>
-      DateIssued:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evDateIssued" required>
+      DateIssued: <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evDateIssued" align="center" required>
       <br/>
       <!--Battery Size:<input type="number" name="evBatterysize" required>-->
-      Battery Size:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize" required>
+      Battery Size: <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize" align="center" required>
       <br/>
-      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrange" required>
+      WLTP range: <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrange" align="center" required>
       <br/>
-      Cost:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evCost" required>
+      Cost: <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evCost" align="center" required>
       <br/>
-      Power:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evPower" required>
+      Power: <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evPower" align="center" required>
       <br/>
       <input type="submit" name="button" value="Add EV">
+      
     </form>
 
 <!--<p align=center style="font-size:20px;">To compare GPUs please <a href="/compare" >click here</a><br/></p>-->

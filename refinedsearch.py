@@ -96,7 +96,7 @@ class RefinedSearch(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('refinedSearch.html')
             self.response.write(template.render(template_values))
 
-        elif action == 'CANCEL':
+        elif action == 'Cancel':
             self.redirect('/')
         else:
             message = "fail"
