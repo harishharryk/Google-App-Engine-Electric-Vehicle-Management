@@ -3,7 +3,7 @@
 <meta charset="utf-8"/>
 <title>Update {{ev.evName}} information</title>
 </head>
-<body>
+<body bgcolor="pink">
   <p>you can {{ url_string }} <a href='{{ url }}'>here</a></p>
   {% if user %}
 <p>Hello {{ user.email() }}</p>
@@ -14,13 +14,13 @@
       EV_Name:<b>{{ev.evName}}</b><br>
       EV_Manufacturer:<b>{{ev.evManufacturer}}</b><br>
       EV_Manufactured_Year:<b>{{ev.evDateIssued}}</b><br>
-      Battery Size:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize1" >
+      Battery Size:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evBatterysize1" >Kwh
       <br/>
-      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrange1" >
+      WLTP range:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evWLTPrange1" >Km
       <br/>
       Cost:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evCost1" >
       <br/>
-      Power:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evPower1" >
+      Power:<input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="evPower1" >Kw
       <br/>
     <input type="submit" value="Update" name="button">
     <input type="submit" value="Delete" name="button">

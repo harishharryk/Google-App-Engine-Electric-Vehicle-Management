@@ -62,7 +62,7 @@ class Review(webapp2.RequestHandler):
 
             #rv_key = ndb.Key('RV',id)
             #rv = rv_key.get()
-        ##################3    
+        ##################3
             #i=0
             #for i in ev.evReview.rvRating:
                 #if ev.evReview.rvRating >0:

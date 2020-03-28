@@ -5,7 +5,7 @@
     <title> Find a Perfect car for You!!!!</title>
     <style>
   form{
-    /* width:500px; */
+
 
     font-size: 20px;
   }
@@ -26,15 +26,15 @@
       <br/>
       Year range Min:<input type="text" name="yr_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="yr_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
       <br>
-      Battery Size Min:<input type="text" name="Bat_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Bat_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+      Battery Size Min:<input type="text" name="Bat_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Bat_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">Kwh
       <br>
-      WLTP range Min:<input type="text" name="Wltp_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Wltp_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+      WLTP range Min:<input type="text" name="Wltp_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Wltp_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">Km
       <br>
       Costrange Min:<input type="text" name="Cost_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Cost_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');"> <!--Max (so less than vlaue of text box)-->
       <br>
-      Powerrange Min:<input type="text" name="Power_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Power_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');"><!--Max (so less than vlaue of text box)-->
+      Powerrange Min:<input type="text" name="Power_min_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;Max:<input type="text" name="Power_max_search" oninput="this.value=this.value.replace(/[^0-9]/g,'');">Kw<!--Max (so less than vlaue of text box)-->
       <br>
-      <!--Name:<input type="text" name="search">-->
+
 
         <input type="submit" name="button" value="Search">
         <!-- <input type="submit" name="button" value="COMPARE"> -->
@@ -81,10 +81,10 @@
         <h1><a href="/EV?evName={{EV.evName}}">{{EV.evName}}</a></h1>
         {% endfor %}
         </div>
-
         <!--{% elif message == "fail" %}
-        <h1>Cars NOT FOUND!!</h1>
-        {% endif %}-->
+                <h1>Cars NOT FOUND!!</h1>
+                {% endif %}-->
+
     </form>
     <br/>
 

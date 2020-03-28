@@ -1,14 +1,12 @@
 import webapp2
 import os
 import jinja2
-#from google.cloud import bigquery
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from ev import EV
 from Display import DisplayCars
 
-#
-# from main import MainPage
+
 
 JINJA_ENVIRONMENT = jinja2.Environment(
 loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -49,7 +47,7 @@ class RefinedSearch(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         action=self.request.get('button')
         query_list = EV.query()
-                #action = self.request.get('name_search')
+
 
                 #check=EV.query()
         if action=='Search':
@@ -140,23 +138,7 @@ class RefinedSearch(webapp2.RequestHandler):
                         #check=EV.query().filter(EV.evName == action).fetch(keys_only=True)---------------"take this"-----------------
 
 
-                    #if len(check) == 0:
-                    #        message = "fail"
-                            #self.response.write('populating<br/>')
-                            #self.initDB()
-                    #        template_values= {'message':message}
-                    #        template = JINJA_ENVIRONMENT.get_template('refinedSearch.html')
-                    #        self.response.write(template.render(template_values))
-                    #else:
-                    #        PAGE_SIZE=50
-                    #        list=EV.query().fetch_page(PAGE_SIZE)
-                    #        search_key = ndb.Key('EV',check[0].id())
-                    #        searched_profile = search_key.get()
-                    #        message = "success"
-                            #template_values= {'search':action,'message':message,'EV':searched_profile}
-                    #        template_values= {'list':list,'check':check,'message':message,'EV':searched_profile}
-                    #        template = JINJA_ENVIRONMENT.get_template('refinedSearch.html')
-                    #        self.response.write(template.render(template_values))
+                    
                 ######################################################################################
 
                         #if action == 'search':

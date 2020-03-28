@@ -29,15 +29,14 @@ class Edit_Cars(webapp2.RequestHandler):
         else:
             url = users.create_login_url(self.request.uri)
             url_string = 'login'
-# generate a map that contains everything that we need to pass to the template
+
         template_values = {
         'url' : url,
         'url_string' : url_string,
         'user' : user,
         'ev': ev
         }
-        # pull the template file and ask jinja to render
-# it with the given template values
+
         template = JINJA_ENVIRONMENT.get_template('edit.html')
         self.response.write(template.render(template_values))
         #self.response.headers['Content-Type'] = 'text/html'

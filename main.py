@@ -59,14 +59,13 @@ class MainPage(webapp2.RequestHandler):
             #else:
                 #url = users.create_login_url(self.request.uri)
                 #url_string = 'login'
-    # generate a map that contains everything that we need to pass to the template
+
             #template_values = {
             #'url' : url,
             #'url_string' : url_string,
             #'user' : user
             #}
-            # pull the template file and ask jinja to render
-    # it with the given template values
+
             template = JINJA_ENVIRONMENT.get_template('main.html')
             self.response.write(template.render(template_values))
 
@@ -95,7 +94,7 @@ class MainPage(webapp2.RequestHandler):
                     message = "EV Added!!"
                 else:
                     message = "EV already exists!!"
-                    
+
 
             template_values = {
                 'message': message,
@@ -109,9 +108,6 @@ class MainPage(webapp2.RequestHandler):
 
 
 
-#app = webapp2.WSGIApplication([
-#                ('/', MainPage),
-#                ('/refinedSearch',RefinedSearch)
-#                ], debug=True)
+
 
 app = webapp2.WSGIApplication([('/',MainPage),('/refinedSearch',RefinedSearch),('/Display',DisplayCars),('/edit',Edit_Cars),('/compare',Compare),('/compareCars',CompareCars),('/review',Review),('/info',Info)],debug = True)

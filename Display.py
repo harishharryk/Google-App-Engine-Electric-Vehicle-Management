@@ -1,7 +1,6 @@
 import webapp2
 import os
 import jinja2
-#from google.cloud import bigquery
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from ev import EV
@@ -26,5 +25,3 @@ class DisplayCars(webapp2.RequestHandler):
 
             template = JINJA_ENVIRONMENT.get_template('Display.html')
             self.response.write(template.render(template_values))
-
-        

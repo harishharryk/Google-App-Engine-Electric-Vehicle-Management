@@ -4,7 +4,7 @@
     <title>cars DISPLAY</title>
 <style>
 form{
-  /* width:500px; */
+  
 
   font-size: 20px;
 }
@@ -18,10 +18,10 @@ form{
     EV_Name:<b>{{ev.evName}}</b><br>
     EV_Manufacturer:<b>{{ev.evManufacturer}}</b><br>
     EV_Manufactured_Year:<b>{{ev.evDateIssued}}</b><br>
-    EV_Battery_Size:<b>{{ev.evBatterysize}}</b><br>
-    EV_WLTPrange:<b>{{ev.evWLTPrange}}</b><br>
+    EV_Battery_Size:<b>{{ev.evBatterysize}} Kwh</b><br>
+    EV_WLTPrange:<b>{{ev.evWLTPrange}} Km</b><br>
     EV_Cost:<b>{{ev.evCost}}</b><br>
-    EV_Power:<b>{{ev.evPower}}</b><br>
+    EV_Power:<b>{{ev.evPower}} Kw</b><br>
     <a href="\edit?evName={{ev.evName}}">EDIT</a>
     <a href="\review?evName={{ev.evName}}">Review</a>
 
