@@ -53,6 +53,7 @@ class Review(webapp2.RequestHandler):
             rvRating = self.request.get('rvRating')
 
 
+
             #if rvUserreview:
             ev_key = ndb.Key('EV',id)
             ev = ev_key.get()

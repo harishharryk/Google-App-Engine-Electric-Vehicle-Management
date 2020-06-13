@@ -8,5 +8,13 @@ indexes:
 
 - kind: "EV"
   properties:
+  - name: "evManufacturer"
+  - name: "evDateIssued"
+- kind: "EV"
+  properties:
+  - name: "evName"
+  - name: "evBatterysize"
+- kind: "EV"
+  properties:
   - name: "evName"
   - name: "evCost"

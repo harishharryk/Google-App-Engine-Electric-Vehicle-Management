@@ -22,8 +22,11 @@ class Edit_Cars(webapp2.RequestHandler):
         url_string = ''
         # pull the current user from the request
         user = users.get_current_user()
+        if user==None:
+            self.response.write('you need to be loggin in to access this <a href="/"> click here</a> to go home')
+            return
 
-        if user:
+        elif user:
             url = users.create_logout_url(self.request.uri)
             url_string = 'logout'
         else:
@@ -65,7 +68,7 @@ class Edit_Cars(webapp2.RequestHandler):
                 ev = ev_key.get()
                 ev.evBatterysize = self.request.get('evBatterysize1')
                 ev.put()
-                self.redirect('/')
+                #self.redirect('/')
             if evWLTPrange1:
                 ev_key = ndb.Key('EV',id)
                 ev = ev_key.get()
